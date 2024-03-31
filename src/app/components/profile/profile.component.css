@@ -1,0 +1,7 @@
+#register-photo img{
+    border: 2px solid black;
+    margin: 20px;
+}
+#register-photo button{
+    background-color: green;
+}

@@ -1,0 +1,61 @@
+
+<section id="register">
+<form [formGroup]='registerForm' (ngSubmit)="saveData(registerForm)">
+    <div id="register-photo">
+        <div class="form-group">
+        <img [src]="imgurl" alt="" height="200px" width="200px">
+        <br> Photo
+        <input type="file" (change)="imgchange($event)" [(ngModel)]="register.photo" name="photo" class="form-control" formControlName="photo">
+    </div>
+    </div>
+<div id="register-box">
+    <div class="form-group">
+    <input type="text" [(ngModel)]="register.fname" name="fname"  formControlName="fname" class="form-control" placeholder="Frist Name">
+    
+</div>
+<div class="form-group">
+    <input type="text" placeholder="Last Name" [(ngModel)]="register.lname" name="lname" class="form-control" formControlName="lname"><br>
+</div>
+    <div class="form-group">
+    <input type="text" placeholder="Email" [(ngModel)]="register.email" name="email" class="form-control" formControlName="email"><br>
+</div>
+    <div class="form-group">
+    <input type="text" placeholder="Phone"[(ngModel)]="register.phone" name="phone" class="form-control" formControlName="phone"><br>
+</div>
+    <div class="form-group">
+   Age: <input type="range" id="slider" [(ngModel)]="register.age" name="age" class="form-control" value="18" min="0" max="100" [(ngModel)]="b" formControlName="age"> {{b}} <br>
+</div>
+   <div class="form-group">
+    <select name="" id=""[(ngModel)]="register.state" name="state" class="form-control" formControlName="state">
+        <option value=""> Select State</option>
+        <option value="Maharastra"> Maharastra</option>
+        <option value="Delhi"> Delhi</option>
+        <option value="Goa"> Goa</option>
+        <option value="Benglore"> Benglore</option>
+    </select><br>
+</div>
+
+    <div class="form-group">
+    <select name="" id=""[(ngModel)]="register.country" name="country" class="form-control" formControlName="country">
+        <option value=""> Select Country</option>
+        <option value="india"> india</option>
+        <option value="UAE"> UAE</option>
+    </select><br>
+</div>
+
+    <div class="form-group">
+    <input type="text" placeholder="Address"[(ngModel)]="register.address" name="address" class="form-control" formControlName="address"><br>
+</div>
+
+    <div class="form-group">
+    <input type="text" placeholder="tags"[(ngModel)]="register.tags" name="tags" class="form-control" formControlName="tags"><br>
+</div>
+    <div class="form-group">
+    <label for=""><input type="checkbox" value="true" [(ngModel)]="register.subscribe" name="subscribe" formControlName="subscribe">Subscribe to newsletter</label><br>
+</div>
+    
+    <button class="btn btn-primary">cancel</button>
+    <button class="btn btn-primary" routerLink="profile" [disabled]="!registerForm.valid">Submit</button>
+</div>
+</form>
+</section>  

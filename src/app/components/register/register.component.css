@@ -1,0 +1,22 @@
+#register{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    padding: 14px;   
+}
+#register-box input{
+    margin: 10px;
+    height: 25px;
+}
+#register-box select{
+    margin: 10px;
+    border: 0;
+}
+#register-box .input1{
+    width: 50%;
+    
+}
+input.ng-invalid.ng-touched{
+    border-color: red;
+}

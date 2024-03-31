@@ -1,0 +1,77 @@
+<app-navbar></app-navbar>
+<h1>Profile</h1>
+<div id="register-photo">
+    <img [src]="imgurl" alt="" height="200px" width="200px" border="2px solid black">
+    <br> 
+    <button class="btn btn-primary">Edit Photo</button> <button class="btn btn-primary">Edit Profile</button>
+    <!-- <input type="file" (change)="imgchange($event)" >  -->
+    <!-- [(ngModel)]="register.photo" name="photo" -->
+<br><br>
+    <p>I'm Sanket Durande and am above 21 years and you can send your emails to 
+        sanketdurande9@gmail.com. i live in te state of Maharastra. i like to play 
+        hockey and reading books. and please send me newsletters. please reach out to me on my phone number.
+    </p>
+
+    <button class="btn btn-primary">I Agree</button>
+<br><br>
+</div>
+
+
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+<ng-container matColumnDef="photo">
+    <th mat-header-cell *matHeaderCellDef>Photo</th>
+    <td mat-cell *matCellDef="let element"> <img src="{{element.photo}}" alt=""> </td>
+</ng-container>
+
+<ng-container matColumnDef="fname">
+    <th mat-header-cell *matHeaderCellDef>First Name</th>
+    <td mat-cell *matCellDef="let element">{{element.fname}}</td>
+</ng-container>
+
+<ng-container matColumnDef="lname">
+    <th mat-header-cell *matHeaderCellDef>Last Name</th>
+    <td mat-cell *matCellDef="let element">{{element.lname}}</td>
+</ng-container>
+
+<ng-container matColumnDef="email">
+    <th mat-header-cell *matHeaderCellDef>email</th>
+    <td mat-cell *matCellDef="let element">{{element.email}}</td>
+</ng-container>
+
+<ng-container matColumnDef="phone">
+    <th mat-header-cell *matHeaderCellDef>phone</th>
+    <td mat-cell *matCellDef="let element">{{element.phone}}</td>
+</ng-container>
+
+<ng-container matColumnDef="age">
+    <th mat-header-cell *matHeaderCellDef>Age</th>
+    <td mat-cell *matCellDef="let element">{{element.age}}</td>
+</ng-container>
+
+<ng-container matColumnDef="state">
+    <th mat-header-cell *matHeaderCellDef>State</th>
+    <td mat-cell *matCellDef="let element">{{element.state}}</td>
+</ng-container>
+
+<ng-container matColumnDef="country">
+    <th mat-header-cell *matHeaderCellDef>Country</th>
+    <td mat-cell *matCellDef="let element">{{element.country}}</td>
+</ng-container>
+
+<ng-container matColumnDef="address">
+    <th mat-header-cell *matHeaderCellDef>Address</th>
+    <td mat-cell *matCellDef="let element">{{element.address}}</td>
+</ng-container>
+
+<ng-container matColumnDef="tags">
+    <th mat-header-cell *matHeaderCellDef>Tag</th>
+    <td mat-cell *matCellDef="let element">{{element.tags}}</td>
+</ng-container>
+<ng-container matColumnDef="subscribe">
+    <th mat-header-cell *matHeaderCellDef>CheckBox</th>
+    <td mat-cell *matCellDef="let element">{{element.subscribe}}</td>
+</ng-container>
+
+<tr mat-header-row *matHeaderRowDef="displayColumns"></tr>
+<tr mat-row *matRowDef="let row; columns:displayColumns;"></tr>
+</table>
